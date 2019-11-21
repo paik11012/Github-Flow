@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Movie Detail
+{% endblock title %}
+
+{% block body %}
+{% comment %} <img src="{% url 'movie.poster_url' %}" alt="poster"> {% endcomment %}
+<h1>{{ movie.title }}</h1>
+<h4>{{ movie.genres.name }} / {{ movie.audience }}</h4>
+<p>{{ movie.description }}</p>
+<div>
+  {% if request.user in movie.liked_users.all %}
+    <a href="{% url 'movies:like' movie.pk %}">Unlike</a>
+  {% else %}
+    <a href="{% url 'movies:like' movie.pk %}">Like</a>
+  {% endif %}
+</div>
+
+{% if request.user.is_authenticated %}
+<form action="{% url 'movies:create' movie.pk %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Add</button>
+</form>
+{% endif %}
+<ul>
+{% for review in movie.reviews.all %}
+  <li>
+    {{ review.score }} | {{ review.content }}
+    {% if request.user == user %}
+      <form action="{% url 'movies:delete' movie.pk review.pk %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>  
+      </form>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
+{% endblock body %}

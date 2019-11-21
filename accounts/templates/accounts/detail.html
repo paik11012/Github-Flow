@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+User Detail
+{% endblock title %}
+
+{% block body %}
+<h1>{{ user.username }}</h1>
+<hr>
+<h3>Review</h3>
+<ul>
+  {% for review in user.reviews.all %}
+    <li>{{ review }}</li>
+  {% endfor %}
+</ul>
+<hr>
+<h3>Movie</h3>
+<ul>
+  {% for movie in user.liked_users.all %}
+    <li>{{ movie.title }}</li>
+  {% endfor %}
+</ul>
+<hr>
+
+<h3>follower: {{ user.followers|length }} / following: {{ user.followings|length }} </h3>
+
+{% endblock body %}

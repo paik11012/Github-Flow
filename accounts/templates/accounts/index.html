@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+User
+{% endblock title %}
+
+{% block body %}
+<h1>All users</h1>
+{% for user in users %}
+  <p>{{ user.pk }}. <a href="{% url 'accounts:detail' user.pk %}">{{ user.username }}</a></p>
+{% endfor %}
+{% endblock body %}

@@ -10,7 +10,7 @@ User Detail
 <h3>Review</h3>
 <ul>
   {% for review in user.reviews.all %}
-    <li>{{ review }}</li>
+    <li>{{ review.content }}</li>
   {% endfor %}
 </ul>
 <hr>

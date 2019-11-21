@@ -5,10 +5,12 @@ Movie Detail
 {% endblock title %}
 
 {% block body %}
-{% comment %} <img src="{% url 'movie.poster_url' %}" alt="poster"> {% endcomment %}
-<h1>{{ movie.title }}</h1>
-<h4>{{ movie.genres.name }} / {{ movie.audience }}</h4>
-<p>{{ movie.description }}</p>
+
+<h1>  {{ movie.title }}</h1>
+
+<h4>Genre : {{ movie.genres.name }} / Audience : {{ movie.audience }}</h4>
+<img src="{{ movie.poster_url }}" alt="movie poster">
+<p>Description : {{ movie.description }}</p>
 <div>
   {% if request.user in movie.liked_users.all %}
     <a href="{% url 'movies:like' movie.pk %}">Unlike</a>

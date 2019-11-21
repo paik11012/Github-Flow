@@ -136,7 +136,7 @@ def like(request, movie_pk):
 
 ### movie list를 보여주는 첫 페이지
 
-![5](C:\Users\student\development\github-flow\5.PNG)
+![5](5.PNG)
 
 ```django
 {% extends 'base.html' %}
@@ -163,7 +163,7 @@ def like(request, movie_pk):
 
 ### 한 영화의 정보를 보여주는  moviedetail  페이지
 
-![1](C:\Users\student\development\github-flow\1.PNG)
+![1](1.PNG)
 
 ```django
 {% extends 'base.html' %}
@@ -212,7 +212,7 @@ Movie Detail
 
 ### 댓글을 달고 삭제하는 함수, like를 누르는 함수를 구현했다.
 
-### ![6](C:\Users\student\development\github-flow\6.PNG)
+### ![6](6.PNG)
 
 movies - views.py
 
@@ -278,7 +278,7 @@ def like(request, movie_pk):
 
 ### 모든 유저정보 보여주는 페이지
 
-![2](C:\Users\student\development\github-flow\2.PNG)
+![2](2.PNG)
 
 ```django
 {% extends 'base.html' %}
@@ -297,7 +297,7 @@ User
 
 ### 유저 생성 폼.py
 
-![3](C:\Users\student\development\github-flow\3.PNG)
+![3](3.PNG)
 
 ```django
 {% extends 'base.html' %}
@@ -322,7 +322,7 @@ Form
 
 ### 유저 정보에 대한 디테일 페이지
 
-![4](C:\Users\student\development\github-flow\4.PNG)
+![4](4.PNG)
 
 ```django
 {% extends 'base.html' %}
